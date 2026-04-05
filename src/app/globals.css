@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --gold-light: #fef3c7;
+  --gold:       #f59e0b;
+  --gold-deep:  #d97706;
+  --sky-light:  #e0f2fe;
+  --sky:        #0ea5e9;
+  --cream:      #faf8f4;
+  --sand:       #f5f0e8;
+  --warm-gray:  #78716c;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: #292524;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glassmorphism cards ─────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-gold {
+  background: rgba(254, 243, 199, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.glass-sky {
+  background: rgba(224, 242, 254, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+/* ── Display font utility ───────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+
+/* ── Gradient text ─────────────────────────────────────────────── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-sky {
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Background mesh ───────────────────────────────────────────── */
+.bg-mesh {
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(251, 191, 36, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 10%, rgba(14, 165, 233, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 10% 70%, rgba(14, 165, 233, 0.07) 0%, transparent 40%);
+}
+
+/* ── Skeleton shimmer ──────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #e7e5e4 25%, #f5f5f4 50%, #e7e5e4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Story card hover ──────────────────────────────────────────── */
+.story-card {
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease;
+}
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.10), 0 0 0 1px rgba(245,158,11,0.15);
+}
+
+/* ── Cross decoration ──────────────────────────────────────────── */
+.cross-decoration::before {
+  content: "✦";
+  color: var(--gold);
+  opacity: 0.4;
+  font-size: 0.7em;
+  margin-right: 0.5em;
+}
+
+/* ── Scroll-reveal helper (JS adds .revealed) ──────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Custom scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── Prose overrides ───────────────────────────────────────────── */
+.story-prose p {
+  margin-bottom: 1.4em;
+  line-height: 1.85;
+  font-size: 1.05rem;
+  color: #44403c;
+}
+
+/* ── Form focus rings ──────────────────────────────────────────── */
+.faith-input {
+  @apply w-full rounded-2xl border border-stone-200 bg-white/70 px-4 py-3
+         text-stone-800 placeholder-stone-400
+         focus:outline-none focus:ring-2 focus:ring-amber-400/60 focus:border-amber-400
+         transition duration-200;
+}
