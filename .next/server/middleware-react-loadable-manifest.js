@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app\\\\story\\\\[id]\\\\page.tsx -> @/lib/supabase\":{\"id\":\"app\\\\story\\\\[id]\\\\page.tsx -> @/lib/supabase\",\"files\":[\"static/chunks/_app-pages-browser_src_lib_supabase_ts.js\"]},\"components\\\\StoryForm.tsx -> @/lib/supabase\":{\"id\":\"components\\\\StoryForm.tsx -> @/lib/supabase\",\"files\":[\"static/chunks/_app-pages-browser_src_lib_supabase_ts.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

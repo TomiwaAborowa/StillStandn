@@ -63,8 +63,8 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
         <div
-          className="inline-flex items-center gap-2 glass-gold rounded-full px-5 py-2 mb-8
-                     text-amber-700 text-sm font-medium animate-fade-in"
+          className="inline-flex items-center gap-2 bg-sky-950 rounded-full px-5 py-2 mb-8
+                     text-slate-50 text-sm font-medium animate-fade-in"
         >
           <Star size={14} fill="currentColor" />
           A Community of Resilience & Faith

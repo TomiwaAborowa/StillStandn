@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className="min-h-screen bg-cream bg-mesh flex flex-col">
+      <body className="min-h-screen bg-white flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

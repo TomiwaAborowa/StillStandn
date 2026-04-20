@@ -5,16 +5,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Star } from "lucide-react";
 import clsx from "clsx";
+import Image from "next/image";
+import logo from "../assets/logo.jpg";
 
 const navLinks = [
-  { href: "/",          label: "Home" },
-  { href: "/stories",   label: "Stories" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/stories", label: "Stories" },
+  { href: "/journeys", label: "Journeys" },
   { href: "/community", label: "Community" },
-  { href: "/submit",    label: "Share Your Story" },
+  { href: "/submit", label: "Share Your Story" },
 ];
 
 export default function Navbar() {
-  const [open,     setOpen]     = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -28,18 +32,16 @@ export default function Navbar() {
     <header
       className={clsx(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "glass shadow-md shadow-black/5 py-3"
-          : "bg-transparent py-5"
+        scrolled ? "glass shadow-md shadow-black/5 py-3" : "bg-transparent py-5"
       )}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between ">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-4 group">
           <span className="text-amber-500 group-hover:animate-pulse-soft transition-all">
-            <Star size={22} fill="currentColor" />
+            <Image src={logo} alt="Logo" width={64} height={64} />
           </span>
-          <span className="font-display text-2xl font-semibold text-stone-800 tracking-wide">
+          <span className="font-display text-3xl font-normal text-stone-800 tracking-wide">
             Still Stand<span className="text-amber-500">'</span>n
           </span>
         </Link>
@@ -52,7 +54,7 @@ export default function Navbar() {
                 <Link
                   href={l.href}
                   className="ml-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500
-                             text-white text-sm font-medium shadow-md shadow-amber-200
+                             text-white text-base font-medium shadow-md shadow-amber-200
                              hover:shadow-lg hover:shadow-amber-300 hover:-translate-y-0.5
                              transition-all duration-200"
                 >
