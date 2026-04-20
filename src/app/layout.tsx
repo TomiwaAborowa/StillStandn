@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "A faith-based community where people share their stories of overcoming life's challenges. You are not alone. Share your story. Find your strength.",
   keywords: ["faith", "resilience", "hope", "stories", "community", "encouragement"],
+  icons: {
+    icon: "./icon.ico", // or "/icon.png"
+  },
   openGraph: {
     title: "Still Stand'n",
     description: "Stories of faith, resilience, and divine grace.",
